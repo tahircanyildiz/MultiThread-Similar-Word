@@ -1,0 +1,67 @@
+﻿<Window x:Class="WordProcessing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WordProcessing"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="474" Width="1190" Loaded="Window_Loaded">
+    <Grid RenderTransformOrigin="0.439,0.465">
+        <ListView x:Name="complaintList" Height="368" VerticalAlignment="Top" HorizontalAlignment="Left" Width="911" Margin="10,80,0,0" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Kayit1" Width="400" DisplayMemberBinding="{Binding Path=Kayit1}" />
+                    <GridViewColumn Header="Kayit2" Width="400" DisplayMemberBinding="{Binding Path=Kayit2}" />
+                    <GridViewColumn Header="Benzerlik Orani" Width="100" DisplayMemberBinding="{Binding Path=Oran}" />
+
+                    <!--<GridViewColumn Header="ComplaintId" Width="100" DisplayMemberBinding="{Binding Path=ComplaintId}" />
+                    <GridViewColumn Header="Product" Width="100" DisplayMemberBinding="{Binding Path=Product}" />
+                    <GridViewColumn Header="Issue" Width="300" DisplayMemberBinding="{Binding Path=Issue}" />
+                    <GridViewColumn Header="Company" Width="100" DisplayMemberBinding="{Binding Path=Company}" />
+                    <GridViewColumn Header="State" Width="100" DisplayMemberBinding="{Binding Path=State}" />
+                    <GridViewColumn Header="ZipCode" Width="100" DisplayMemberBinding="{Binding Path=ZipCode}" />-->
+                    <!--<GridViewColumn Header="DateReceived" Width="100" DisplayMemberBinding="{Binding Path=DateReceived}" />
+                    <GridViewColumn Header="SubProduct" Width="100" DisplayMemberBinding="{Binding Path=SubProduct}" />
+                    <GridViewColumn Header="Subissue" Width="100" DisplayMemberBinding="{Binding Path=Subissue}" />
+                    <GridViewColumn Header="ConsumerComplaintNarrative" Width="100" DisplayMemberBinding="{Binding Path=ConsumerComplaintNarrative}" />
+                    <GridViewColumn Header="CompanyPublicResponse" Width="100" DisplayMemberBinding="{Binding Path=CompanyPublicResponse}" />
+                    <GridViewColumn Header="Tags" Width="100" DisplayMemberBinding="{Binding Path=Tags}" />
+                    <GridViewColumn Header="ConsumerConsentProvided" Width="100" DisplayMemberBinding="{Binding Path=ConsumerConsentProvided}" />
+                    <GridViewColumn Header="SubmittedVia" Width="100" DisplayMemberBinding="{Binding Path=SubmittedVia}" />
+                    <GridViewColumn Header="DatesentToCompany" Width="100" DisplayMemberBinding="{Binding Path=DatesentToCompany}" />
+                    <GridViewColumn Header="CompanyResponseToConsumer" Width="100" DisplayMemberBinding="{Binding Path=CompanyResponseToConsumer}" />
+                    <GridViewColumn Header="TimelyResponse" Width="100" DisplayMemberBinding="{Binding Path=TimelyResponse}" />
+                    <GridViewColumn Header="ConsumerDisputed" Width="100" DisplayMemberBinding="{Binding Path=ConsumerDisputed}" />-->
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListBox x:Name="taskList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="931,240,10,10" SelectionChanged="taskList_SelectionChanged"/>
+
+        <Label Content="Thread Sayısı:" HorizontalAlignment="Left" Margin="926,209,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="threadCount" Content="1" HorizontalAlignment="Left" Margin="1133,209,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="threadCountSlider" HorizontalAlignment="Left" Margin="1013,213,0,0" VerticalAlignment="Top" Width="120" ValueChanged="Slider_ValueChanged" SmallChange="1" Maximum="32" Minimum="1" Value="1"/>
+
+        <Label Content="Product" HorizontalAlignment="Left" Margin="934,21,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ProductCount" Content="10%" HorizontalAlignment="Left" Margin="1116,21,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="ProductSlider" HorizontalAlignment="Left" Margin="996,21,0,0" VerticalAlignment="Top" Width="120" ValueChanged="ProductSlider_ValueChanged" Minimum="1" SmallChange="1" Value="1" Maximum="100"/>
+
+        <Label Content="Issue" HorizontalAlignment="Left" Margin="932,49,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="IssueCount" Content="10%" HorizontalAlignment="Left" Margin="1116,41,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="IssueSlider" HorizontalAlignment="Left" Margin="997,47,0,0" VerticalAlignment="Top" Width="120" ValueChanged="IssueSlider_ValueChanged" Minimum="1" SmallChange="1" Value="1" Maximum="100"/>
+
+        <Label Content="Company" HorizontalAlignment="Left" Margin="932,76,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="CompanyCount" Content="10%" HorizontalAlignment="Left" Margin="1116,68,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="CompanySlider" HorizontalAlignment="Left" Margin="996,76,0,0" VerticalAlignment="Top" Width="120" ValueChanged="CompanySlider_ValueChanged" Minimum="1" SmallChange="1" Value="1" Maximum="100"/>
+
+        <Label Content="State" HorizontalAlignment="Left" Margin="932,102,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="StateCount" Content="10%" HorizontalAlignment="Left" Margin="1116,89,0,0" VerticalAlignment="Top"/>
+        <Slider x:Name="StateSlider" HorizontalAlignment="Left" Margin="996,106,0,0" VerticalAlignment="Top" Width="120" ValueChanged="StateSlider_ValueChanged" Minimum="1" SmallChange="1" Value="1" Maximum="100"/>
+
+        <Label Content="benzerlik oranı" HorizontalAlignment="Left" Margin="920,168,0,0" VerticalAlignment="Top" Height="36" AutomationProperties.IsOffscreenBehavior="Default" AutomationProperties.IsColumnHeader="True" FontWeight="Bold"/>
+        <Button x:Name="ScanButton" Content="TARA" HorizontalAlignment="Left" Margin="55,27,0,0" VerticalAlignment="Top" Height="40" Width="121" Click="ScanButton_Click"/>
+        <TextBox x:Name="similar" HorizontalAlignment="Left" Height="26" Margin="1019,168,0,0" Text="Benzerlik oranı giriniz." TextWrapping="Wrap" VerticalAlignment="Top" Width="122" TextChanged="TextBox_TextChanged"/>
+
+
+    </Grid>
+</Window>
