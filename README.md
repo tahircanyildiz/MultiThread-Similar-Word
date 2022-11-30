@@ -3,3 +3,4 @@ Multithread yapısıyla dataset içinden çekilen bütün veriler birbiriyle kı
 
 Kullanılan dataset =>https://www.kaggle.com/datasets/selener/consumer-complaint-database
 
+![Kodun çalışır halinden bir ekran görüntüsü](C:\Users\Tahir\Desktop\screen.jpg)
